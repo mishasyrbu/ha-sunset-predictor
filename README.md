@@ -4,6 +4,12 @@
 
 A Home Assistant integration that predicts sunset quality using [sunset-predictor.com](https://sunset-predictor.com).
 
+| Minimal | With weather details |
+|:---:|:---:|
+| ![Minimal view](images/sunset-predictor-card-mini.png) | ![Full view](images/sunset-predictor-card-full.png) |
+
+*Screenshots from the companion [sunset-predictor-card](https://github.com/sunset-predictor/sunset-predictor-card)*
+
 ## Features
 
 - Sunset quality score (0–100) based on weather conditions
