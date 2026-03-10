@@ -1,12 +1,14 @@
 {
   "domain": "sunset_predictor",
   "name": "Sunset Predictor",
-  "codeowners": [],
+  "codeowners": ["@mishasyrbu"],
   "config_flow": true,
   "dependencies": [],
-  "documentation": "https://github.com/sunset-predictor/sunset-predictor-card",
+  "documentation": "https://github.com/mishasyrbu/ha-sunset-predictor",
   "iot_class": "cloud_polling",
   "requirements": [],
   "version": "1.0.0",
-  "icon": "mdi:weather-sunset"
+  "icon": "mdi:weather-sunset",
+  "integration_type": "service",
+  "issue_tracker": "https://github.com/mishasyrbu/ha-sunset-predictor/issues"
 }
