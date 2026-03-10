@@ -1,0 +1,37 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sunset Predictor",
+        "description": "Richten Sie Ihre Sunset Predictor-Integration ein.",
+        "data": {
+          "api_key": "API-Schlüssel",
+          "latitude": "Breitengrad",
+          "longitude": "Längengrad",
+          "language": "Sprache",
+          "scan_interval": "Aktualisierungsintervall (Minuten)"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Ungültiger API-Schlüssel. Bitte überprüfen Sie Ihren Schlüssel und versuchen Sie es erneut.",
+      "cannot_connect": "Verbindung zur Sunset Predictor API konnte nicht hergestellt werden."
+    },
+    "abort": {
+      "already_configured": "Dieser Standort ist bereits konfiguriert."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Sunset Predictor-Optionen",
+        "data": {
+          "language": "Sprache",
+          "scan_interval": "Aktualisierungsintervall (Minuten)",
+          "latitude": "Breitengrad",
+          "longitude": "Längengrad"
+        }
+      }
+    }
+  }
+}

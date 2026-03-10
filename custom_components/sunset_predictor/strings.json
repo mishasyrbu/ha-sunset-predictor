@@ -1,0 +1,37 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sunset Predictor",
+        "description": "Set up your Sunset Predictor integration.",
+        "data": {
+          "api_key": "API Key",
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "language": "Language",
+          "scan_interval": "Polling interval (minutes)"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid API key. Please check your key and try again.",
+      "cannot_connect": "Unable to connect to the Sunset Predictor API."
+    },
+    "abort": {
+      "already_configured": "This location is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Sunset Predictor Options",
+        "data": {
+          "language": "Language",
+          "scan_interval": "Polling interval (minutes)",
+          "latitude": "Latitude",
+          "longitude": "Longitude"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sunset Predictor",
+        "description": "Configurez votre intégration Sunset Predictor.",
+        "data": {
+          "api_key": "Clé API",
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "language": "Langue",
+          "scan_interval": "Intervalle de mise à jour (minutes)"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Clé API invalide. Veuillez vérifier votre clé et réessayer.",
+      "cannot_connect": "Impossible de se connecter à l'API Sunset Predictor."
+    },
+    "abort": {
+      "already_configured": "Cet emplacement est déjà configuré."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options Sunset Predictor",
+        "data": {
+          "language": "Langue",
+          "scan_interval": "Intervalle de mise à jour (minutes)",
+          "latitude": "Latitude",
+          "longitude": "Longitude"
+        }
+      }
+    }
+  }
+}

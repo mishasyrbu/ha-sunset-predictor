@@ -1,0 +1,12 @@
+{
+  "domain": "sunset_predictor",
+  "name": "Sunset Predictor",
+  "codeowners": [],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/sunset-predictor/sunset-predictor-card",
+  "iot_class": "cloud_polling",
+  "requirements": [],
+  "version": "1.0.0",
+  "icon": "mdi:weather-sunset"
+}

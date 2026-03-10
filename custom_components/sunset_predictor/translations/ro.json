@@ -1,0 +1,37 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sunset Predictor",
+        "description": "Configurați integrarea Sunset Predictor.",
+        "data": {
+          "api_key": "Cheie API",
+          "latitude": "Latitudine",
+          "longitude": "Longitudine",
+          "language": "Limbă",
+          "scan_interval": "Interval de actualizare (minute)"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Cheie API invalidă. Verificați cheia și încercați din nou.",
+      "cannot_connect": "Nu s-a putut conecta la API-ul Sunset Predictor."
+    },
+    "abort": {
+      "already_configured": "Această locație este deja configurată."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opțiuni Sunset Predictor",
+        "data": {
+          "language": "Limbă",
+          "scan_interval": "Interval de actualizare (minute)",
+          "latitude": "Latitudine",
+          "longitude": "Longitudine"
+        }
+      }
+    }
+  }
+}

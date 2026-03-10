@@ -1,0 +1,37 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sunset Predictor",
+        "description": "Настройте интеграцию Sunset Predictor.",
+        "data": {
+          "api_key": "API-ключ",
+          "latitude": "Широта",
+          "longitude": "Долгота",
+          "language": "Язык",
+          "scan_interval": "Интервал обновления (минуты)"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Неверный API-ключ. Проверьте ключ и попробуйте снова.",
+      "cannot_connect": "Не удалось подключиться к API Sunset Predictor."
+    },
+    "abort": {
+      "already_configured": "Это местоположение уже настроено."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Настройки Sunset Predictor",
+        "data": {
+          "language": "Язык",
+          "scan_interval": "Интервал обновления (минуты)",
+          "latitude": "Широта",
+          "longitude": "Долгота"
+        }
+      }
+    }
+  }
+}
