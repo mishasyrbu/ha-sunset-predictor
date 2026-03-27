@@ -88,14 +88,11 @@ class SunsetPredictorConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         config_entry: config_entries.ConfigEntry,
     ) -> SunsetPredictorOptionsFlow:
         """Get the options flow."""
-        return SunsetPredictorOptionsFlow(config_entry)
+        return SunsetPredictorOptionsFlow()
 
 
 class SunsetPredictorOptionsFlow(config_entries.OptionsFlow):
     """Handle options for Sunset Predictor."""
-
-    def __init__(self, config_entry: config_entries.ConfigEntry) -> None:
-        self._config_entry = config_entry
 
     async def async_step_init(
         self, user_input: dict[str, Any] | None = None
@@ -104,18 +101,26 @@ class SunsetPredictorOptionsFlow(config_entries.OptionsFlow):
         errors: dict[str, str] = {}
 
         if user_input is not None:
-            session = async_get_clientsession(self.hass)
-            client = SunsetPredictorApiClient(
-                session, self._config_entry.data["api_key"]
-            )
-            error = await client.async_validate_key(
-                user_input["latitude"], user_input["longitude"]
-            )
-            if error is None:
-                return self.async_create_entry(title="", data=user_input)
-            errors["base"] = error
+            # Only validate against the API if location changed
+            current = {**self.config_entry.data, **self.config_entry.options}
+            lat_changed = user_input["latitude"] != current.get("latitude")
+            lon_changed = user_input["longitude"] != current.get("longitude")
 
-        current = self._config_entry.data
+            if lat_changed or lon_changed:
+                session = async_get_clientsession(self.hass)
+                client = SunsetPredictorApiClient(
+                    session, self.config_entry.data["api_key"]
+                )
+                error = await client.async_validate_key(
+                    user_input["latitude"], user_input["longitude"]
+                )
+                if error is not None:
+                    errors["base"] = error
+
+            if not errors:
+                return self.async_create_entry(title="", data=user_input)
+
+        current = {**self.config_entry.data, **self.config_entry.options}
 
         return self.async_show_form(
             step_id="init",

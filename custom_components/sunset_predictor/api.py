@@ -42,9 +42,11 @@ class SunsetPredictorApiClient:
             ) as resp:
                 if resp.status == 401:
                     raise SunsetPredictorAuthError("Invalid API key")
+                if resp.status == 429:
+                    raise SunsetPredictorApiError("API rate limit exceeded")
                 resp.raise_for_status()
                 return await resp.json()
-        except SunsetPredictorAuthError:
+        except (SunsetPredictorAuthError, SunsetPredictorApiError):
             raise
         except aiohttp.ClientError as err:
             raise SunsetPredictorApiError(

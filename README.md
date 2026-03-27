@@ -17,6 +17,7 @@ A Home Assistant integration that predicts sunset quality using [sunset-predicto
 - Sunset and sunrise times
 - Localized explanations (en, fr, de, es, ro, ru, uk)
 - Configurable polling interval
+- Automatic nighttime skip — no API calls after sunset until the next sunrise
 
 ## Installation
 
@@ -46,6 +47,67 @@ The integration creates a sensor entity `sensor.sunset_predictor` with:
 
 - **State**: Sunset quality score (0–100)
 - **Attributes**: label, explanation, confidence, sunset/sunrise times, weather factors, raw meteorological data
+
+## Development
+
+### Prerequisites
+
+- Python 3.12+
+- A running Home Assistant instance (or [dev container](https://developers.home-assistant.io/docs/development_environment))
+
+### Setup
+
+```bash
+git clone https://github.com/mishasyrbu/ha-sunset-predictor.git
+cd ha-sunset-predictor
+python -m venv venv
+source venv/bin/activate
+pip install homeassistant
+```
+
+### Project structure
+
+```
+custom_components/sunset_predictor/
+├── __init__.py       # Integration setup and teardown
+├── api.py            # API client for sunset-predictor.com
+├── config_flow.py    # Config and options flow UI
+├── const.py          # Constants (domain, defaults, endpoints)
+├── coordinator.py    # DataUpdateCoordinator with nighttime skip
+├── sensor.py         # Sensor entity exposing score and attributes
+├── manifest.json
+├── strings.json
+└── translations/     # Localized strings (en, fr, de, es, ro, ru, uk)
+```
+
+### Testing
+
+#### CI validation
+
+The repository runs two validation checks on every push and PR:
+
+- **HACS validation** — ensures the integration meets [HACS](https://hacs.xyz/) requirements
+- **hassfest** — validates `manifest.json` and integration structure against Home Assistant standards
+
+#### Manual testing
+
+1. Copy `custom_components/sunset_predictor` into your HA `config/custom_components/` directory:
+   ```bash
+   scp -r custom_components/sunset_predictor user@your-ha-server:/path/to/homeassistant/config/custom_components/sunset_predictor
+   ```
+2. Restart Home Assistant
+3. Add the integration via **Settings → Devices & Services → Add Integration**
+4. Verify the sensor entity appears and reports a score
+5. Test the options flow by changing language, polling interval, or coordinates
+
+#### Key scenarios to verify
+
+- **Setup flow**: valid API key creates the entry; invalid key shows an error
+- **Duplicate prevention**: adding the same coordinates twice is rejected
+- **Options flow**: changing settings reloads the integration with updated values
+- **Nighttime skip**: after sunset, the coordinator returns cached data instead of calling the API
+- **Auth failure**: an expired/revoked API key triggers HA's reauthentication flow
+- **Network errors**: temporary API outages show as "unavailable" without crashing the integration
 
 ## Companion Card
 

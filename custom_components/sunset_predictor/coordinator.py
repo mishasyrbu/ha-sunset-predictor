@@ -9,6 +9,7 @@ from datetime import timedelta
 import aiohttp
 from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import ConfigEntryAuthFailed
+from homeassistant.helpers.sun import is_up
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .api import SunsetPredictorApiClient, SunsetPredictorAuthError
@@ -41,7 +42,12 @@ class SunsetPredictorCoordinator(DataUpdateCoordinator):
         self.lang = lang
 
     async def _async_update_data(self) -> dict:
-        """Fetch data from the API."""
+        """Fetch data from the API. Skip fetching at night."""
+        if not is_up(self.hass):
+            _LOGGER.debug("Sun is down, skipping sunset prediction fetch")
+            if self.data is not None:
+                return self.data
+            # No cached data yet — still need to fetch
         try:
             return await self.api_client.async_get_prediction(
                 self.lat, self.lon, self.lang
@@ -50,5 +56,3 @@ class SunsetPredictorCoordinator(DataUpdateCoordinator):
             raise ConfigEntryAuthFailed from err
         except (aiohttp.ClientError, asyncio.TimeoutError) as err:
             raise UpdateFailed(f"Connection error: {err}") from err
-        except Exception as err:
-            raise UpdateFailed(f"Unexpected error: {err}") from err
