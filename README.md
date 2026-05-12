@@ -8,7 +8,7 @@ A Home Assistant integration that predicts sunset quality using [sunset-predicto
 |:---:|:---:|
 | ![Minimal view](images/sunset-predictor-card-mini.png) | ![Full view](images/sunset-predictor-card-full.png) |
 
-*Screenshots from the companion [sunset-predictor-card](https://github.com/sunset-predictor/sunset-predictor-card)*
+*Screenshots from the companion [sunset-predictor-card](https://github.com/mishasyrbu/sunset-predictor-card)*
 
 ## Features
 
@@ -111,4 +111,4 @@ The repository runs two validation checks on every push and PR:
 
 ## Companion Card
 
-For a beautiful dashboard display, use the companion Lovelace card: [sunset-predictor-card](https://github.com/sunset-predictor/sunset-predictor-card)
+For a beautiful dashboard display, use the companion Lovelace card: [sunset-predictor-card](https://github.com/mishasyrbu/sunset-predictor-card)
