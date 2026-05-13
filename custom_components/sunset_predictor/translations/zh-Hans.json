@@ -1,0 +1,37 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sunset Predictor",
+        "description": "设置您的 Sunset Predictor 集成。",
+        "data": {
+          "api_key": "API 密钥",
+          "latitude": "纬度",
+          "longitude": "经度",
+          "language": "语言",
+          "scan_interval": "更新间隔（分钟）"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "API 密钥无效。请检查密钥并重试。",
+      "cannot_connect": "无法连接到 Sunset Predictor API。"
+    },
+    "abort": {
+      "already_configured": "该位置已配置。"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Sunset Predictor 选项",
+        "data": {
+          "language": "语言",
+          "scan_interval": "更新间隔（分钟）",
+          "latitude": "纬度",
+          "longitude": "经度"
+        }
+      }
+    }
+  }
+}

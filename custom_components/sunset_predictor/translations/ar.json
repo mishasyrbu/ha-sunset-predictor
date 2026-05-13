@@ -1,0 +1,37 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sunset Predictor",
+        "description": "قم بإعداد تكامل Sunset Predictor.",
+        "data": {
+          "api_key": "مفتاح API",
+          "latitude": "خط العرض",
+          "longitude": "خط الطول",
+          "language": "اللغة",
+          "scan_interval": "فترة التحديث (دقائق)"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "مفتاح API غير صالح. يرجى التحقق من المفتاح والمحاولة مرة أخرى.",
+      "cannot_connect": "تعذر الاتصال بواجهة برمجة تطبيقات Sunset Predictor."
+    },
+    "abort": {
+      "already_configured": "هذا الموقع تم إعداده بالفعل."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "خيارات Sunset Predictor",
+        "data": {
+          "language": "اللغة",
+          "scan_interval": "فترة التحديث (دقائق)",
+          "latitude": "خط العرض",
+          "longitude": "خط الطول"
+        }
+      }
+    }
+  }
+}
