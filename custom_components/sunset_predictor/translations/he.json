@@ -1,0 +1,37 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sunset Predictor",
+        "description": "הגדר את שילוב Sunset Predictor.",
+        "data": {
+          "api_key": "מפתח API",
+          "latitude": "קו רוחב",
+          "longitude": "קו אורך",
+          "language": "שפה",
+          "scan_interval": "מרווח עדכון (דקות)"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "מפתח API לא חוקי. בדוק את המפתח ונסה שוב.",
+      "cannot_connect": "לא ניתן להתחבר ל-API של Sunset Predictor."
+    },
+    "abort": {
+      "already_configured": "מיקום זה כבר מוגדר."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "אפשרויות Sunset Predictor",
+        "data": {
+          "language": "שפה",
+          "scan_interval": "מרווח עדכון (דקות)",
+          "latitude": "קו רוחב",
+          "longitude": "קו אורך"
+        }
+      }
+    }
+  }
+}

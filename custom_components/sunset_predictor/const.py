@@ -13,6 +13,13 @@ SUPPORTED_LANGUAGES = {
     "uk": "Українська",
     "de": "Deutsch",
     "es": "Español",
+    "it": "Italiano",
+    "ar": "العربية",
+    "ja": "日本語",
+    "he": "עברית",
+    "zh-CN": "中文 (简体)",
+    "pt": "Português",
+    "hi": "हिन्दी",
 }
 
 API_BASE_URL = "https://sunset-predictor.com/api"

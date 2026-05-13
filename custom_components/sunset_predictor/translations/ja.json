@@ -1,0 +1,37 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sunset Predictor",
+        "description": "Sunset Predictor統合を設定します。",
+        "data": {
+          "api_key": "APIキー",
+          "latitude": "緯度",
+          "longitude": "経度",
+          "language": "言語",
+          "scan_interval": "更新間隔（分）"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "APIキーが無効です。キーを確認して再試行してください。",
+      "cannot_connect": "Sunset Predictor APIに接続できません。"
+    },
+    "abort": {
+      "already_configured": "この場所はすでに設定されています。"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Sunset Predictorのオプション",
+        "data": {
+          "language": "言語",
+          "scan_interval": "更新間隔（分）",
+          "latitude": "緯度",
+          "longitude": "経度"
+        }
+      }
+    }
+  }
+}

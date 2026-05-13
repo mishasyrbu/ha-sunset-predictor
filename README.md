@@ -15,7 +15,7 @@ A Home Assistant integration that predicts sunset quality using [sunset-predicto
 - Sunset quality score (0–100) based on weather conditions
 - Detailed weather factors (cloud cover, humidity, visibility, wind, rain)
 - Sunset and sunrise times
-- Localized explanations (en, fr, de, es, ro, ru, uk)
+- Localized explanations (en, ru, fr, ro, uk, de, es, it, ar, ja, he, zh-CN, pt, hi)
 - Configurable polling interval
 - Automatic nighttime skip — no API calls after sunset until the next sunrise
 
@@ -77,7 +77,7 @@ custom_components/sunset_predictor/
 ├── sensor.py         # Sensor entity exposing score and attributes
 ├── manifest.json
 ├── strings.json
-└── translations/     # Localized strings (en, fr, de, es, ro, ru, uk)
+└── translations/     # Localized strings (en, ru, fr, ro, uk, de, es, it, ar, ja, he, zh-Hans, pt, hi)
 ```
 
 ### Testing

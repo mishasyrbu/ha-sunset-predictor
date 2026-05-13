@@ -1,0 +1,37 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sunset Predictor",
+        "description": "अपना Sunset Predictor एकीकरण सेट करें।",
+        "data": {
+          "api_key": "API कुंजी",
+          "latitude": "अक्षांश",
+          "longitude": "देशांतर",
+          "language": "भाषा",
+          "scan_interval": "अद्यतन अंतराल (मिनट)"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "अमान्य API कुंजी। कृपया अपनी कुंजी जांचें और पुनः प्रयास करें।",
+      "cannot_connect": "Sunset Predictor API से कनेक्ट नहीं हो सका।"
+    },
+    "abort": {
+      "already_configured": "यह स्थान पहले से कॉन्फ़िगर किया गया है।"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Sunset Predictor विकल्प",
+        "data": {
+          "language": "भाषा",
+          "scan_interval": "अद्यतन अंतराल (मिनट)",
+          "latitude": "अक्षांश",
+          "longitude": "देशांतर"
+        }
+      }
+    }
+  }
+}
