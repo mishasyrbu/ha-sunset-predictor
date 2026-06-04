@@ -112,3 +112,9 @@ The repository runs two validation checks on every push and PR:
 ## Companion Card
 
 For a beautiful dashboard display, use the companion Lovelace card: [sunset-predictor-card](https://github.com/mishasyrbu/sunset-predictor-card)
+
+## Support
+
+If you find this integration useful, consider buying me a coffee ☕
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-yellow?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/mishasyrbu)
